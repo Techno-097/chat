@@ -1,0 +1,546 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Banner Slider -->
+  <section class="bizagn--bnner-cover" data-bg-img="/static/assets/images/banner/banner-bg.png">
+      <div class="container">
+          <div class="bizagn--banner bizagn--owl-btn owl-carousel style-2" data-owl-nav="true" data-owl-dots="true" data-owl-animate-out="fadeOut" data-owl-animate-in="fadeIn" data-owl-margin="5">
+              {% for a in home %}
+
+              <!-- slide 01 -->
+              <div class="bizagn--banner-slide">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <!-- Slide Text -->
+                          <div class="bizagn--banner-slide-text">
+                              <h1>{{ a.title}}</h1>
+                              <p>{{ a.description}}</p>
+                              <a href="#" class="btn bizagn--base-btn">
+                                  <img src="/static/assets/images/btn-right-arrow.svg" alt="" class="svg left"> Biz haqimizda
+                                  <img src="static/assets/images/btn-right-arrow.svg" alt="" class="svg right">
+                              </a>
+                          </div>
+                          <!-- End of Slide Text -->
+
+                      </div>
+                      <div class="col-md-6">
+                          <!-- Slide Images -->
+                          <div class="bizagn--banner-slide-images d-flex justify-content-md-end">
+                              <div class="main-image">
+                                  <img src="{{a.image.url}}" alt="" class="img-fluid">
+                              </div>
+                          </div>
+                          <!-- End of Slide Images -->
+                      </div>
+                  </div>
+              </div>
+              <!-- End of slide 01 -->
+              {% endfor %}
+
+
+
+
+
+          </div>
+      </div>
+  </section>
+  <!-- End of Banner Slider -->
+
+  <!-- Service -->
+  <section class="pt-120 pb-120">
+      <div class="container">
+          <!-- Section Title -->
+          <div class="bizagn--section-title">
+              <p>service</p>
+              <h2>Bizning ... ni koring<br>Sifatli xizmat</h2>
+          </div>
+          <!-- End of Section Title -->
+          <div class="bizagn--service-slider bizagn--owl-btn owl-carousel bizagn--nav-95px" data-owl-items="3" data-owl-nav="true" data-owl-margin="30" data-owl-autoplay="false" data-owl-responsive='{"0": {"items": "1"},"768": {"items": "2"}, "992": {"items": "3"}}'>
+              <!-- Service Item -->
+             {% for b in not %}
+              <div class="bizagn--service-slider-item">
+                  <div class="bizagn--service-item">
+                      <img src="{{b.image.url}}" alt="" class="img-fluid svg">
+                      <h3>{{b.title}}</h3>
+                      <p>{{b.text}}</p>
+                  </div>
+              </div>
+         {% endfor %}
+              <!-- End of Service Item -->
+          </div>
+      </div>
+  </section>
+  <!-- End of Service -->
+
+  <!-- Project -->
+  <section class="pt-120 pb-120" data-bg-img="/static/assets/images/project/bg.png">
+      <div class="container">
+          <!-- Section Title -->
+          <div class="bizagn--section-title">
+              <p>Loyihalar</p>
+              <h2>Take a peek at our <br> Eng songgi loyihalar</h2>
+          </div>
+          <!-- End of Section Title -->
+
+          <!-- Project Filter -->
+          <div class="bizagn--project-filter">
+              <!-- Project Filter Buttons -->
+              <div class="bizagn--project-filter-buttons">
+                  <button class="filter-btn" data-filter="*"> Barcha </button>
+                  <button class="filter-btn" data-filter=".creative"> Ijodiy </button>
+                  <button class="filter-btn" data-filter=".branding"> Branding </button>
+                  <button class="filter-btn" data-filter=".web"> Web </button>
+              </div>
+              <!-- End of Project Filter Buttons -->
+
+
+              <div class="row no-gutters bizagn--project-filter-items isotope">
+                  <!-- Filter Item -->
+                  {%for e in All%}
+                  <div class="col-lg-4 col-md-6 bizagn--filter-item branding">
+                      <div class="d-flex justify-content-center">
+                          <div class="d-inline-block position-relative">
+                              <img src="{{e.image.url}}" alt="" class="img-fluid">
+                              <div class="bizagn--filter-item-data">
+                                  <h4> <a href="project-details.html"> {{e.number_of_project}}</a> </h4>
+                                  <p>{{e.category_of_project}}</p>
+                                  <a href="project-details.html"><img src="{{e.image.url}}" alt="" class="img-fluid"></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+                  <!-- End of Filter Item -->
+
+                  <!-- Filter Item -->
+                  <div class="col-lg-4 col-md-6 bizagn--filter-item creative">
+                      <div class="d-flex justify-content-center">
+                          <div class="d-inline-block position-relative">
+                              <img src="/static/assets/images/project/0-2.jpg" alt="" class="img-fluid">
+                              <div class="bizagn--filter-item-data">
+                                  <h4> <a href="project-details.html"> 2-loyiha </a> </h4>
+                                  <p>Ijodiy</p>
+                                  <a href="project-details.html"><img src="/static/assets/images/project/arrow.svg" alt="" class="img-fluid"></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End of Filter Item -->
+
+                  <!-- Filter Item -->
+                  <div class="col-lg-4 col-md-6 bizagn--filter-item web">
+                      <div class="d-flex justify-content-center">
+                          <div class="d-inline-block position-relative">
+                              <img src="/static/assets/images/project/0-3.jpg" alt="" class="img-fluid">
+                              <div class="bizagn--filter-item-data">
+                                  <h4> <a href="project-details.html"> 3-loyiha </a> </h4>
+                                  <p>Web</p>
+                                  <a href="project-details.html"><img src="/static/assets/images/project/arrow.svg" alt="" class="img-fluid"></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End of Filter Item -->
+
+                  <!-- Filter Item -->
+                  <div class="col-lg-4 col-md-6 bizagn--filter-item branding">
+                      <div class="d-flex justify-content-center">
+                          <div class="d-inline-block position-relative">
+                              <img src="/static/assets/images/project/0-4.jpg" alt="" class="img-fluid">
+                              <div class="bizagn--filter-item-data">
+                                  <h4> <a href="project-details.html"> 4-loyiha </a> </h4>
+                                  <p>Branding</p>
+                                  <a href="project-details.html"><img src="/static/assets/images/project/arrow.svg" alt="" class="img-fluid"></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End of Filter Item -->
+
+                  <!-- Filter Item -->
+                  <div class="col-lg-4 col-md-6 bizagn--filter-item creative">
+                      <div class="d-flex justify-content-center">
+                          <div class="d-inline-block position-relative">
+                              <img src="/static/assets/images/project/0-5.jpg" alt="" class="img-fluid">
+                              <div class="bizagn--filter-item-data">
+                                  <h4> <a href="project-details.html"> 5-loyiha </a> </h4>
+                                  <p>Ijodiy</p>
+                                  <a href="project-details.html"><img src="/static/assets/images/project/arrow.svg" alt="" class="img-fluid"></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End of Filter Item -->
+
+                  <!-- Filter Item -->
+                  <div class="col-lg-4 col-md-6 bizagn--filter-item web">
+                      <div class="d-flex justify-content-center">
+                          <div class="d-inline-block position-relative">
+                              <img src="/static/assets/images/project/0-6.jpg" alt="" class="img-fluid">
+                              <div class="bizagn--filter-item-data">
+                                  <h4> <a href="project-details.html"> 6-loyiha </a> </h4>
+                                  <p>Web</p>
+                                  <a href="project-details.html"><img src="/static/assets/images/project/arrow.svg" alt="" class="img-fluid"></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End of Filter Item -->
+              </div>
+          </div>
+          <!-- End of Project Filter -->
+
+      </div>
+  </section>
+  <!-- End of Project -->
+
+  <!-- Testimonial -->
+  <section class="pt-120 pb-120">
+      <div class="container">
+          <!-- Section Title -->
+          <div class="bizagn--section-title text-center">
+              <p>Tavsiflar</p>
+              <h2>Bianing jamoamiz nima haqida gapiradi</h2>
+          </div>
+          <!-- End of Section Title -->
+
+
+          <div class="row">
+              <div class="col-md-8 offset-md-2">
+                  <!-- Testimonial Slider -->
+                  <div class="bizagn--testi-slider bizagn--owl-btn owl-carousel bizagn--nav-95px" data-owl-nav="true" data-owl-autoplay="false" data-bg-img="/static/assets/images/testimonial/map-bg.png">
+                      <!-- Testimonial Slider Item -->
+                      {% for d in useful %}
+                      <div class="bizagn--testi-slider-item">
+                          <div class="bizagn--testi-item text-center">
+                              <img src="{{d.image.url}}" alt="" class="img-fluid">
+                              <p>{{d.about}}</p>
+                              <div class="client-pos"> <span> </span> Boshliqq</div>
+                          </div>
+                      </div>
+                      {% endfor %}
+                      <!-- End of Testimonial Slider Item -->
+
+              </div>
+          </div>
+
+
+
+      </div>
+  </section>
+  <!-- End of Testimonial -->
+
+  <!-- Call To Action -->
+  <section class="pt-120 pb-120 bg-red" data-bg-img="assets/images/cta-bg.png">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-7 col-md-8 offset-lg-1">
+                  <h2>Sizda bor-bir loyiha bormi?</h2>
+                  <p>Taiping bontste laatste zit met bronnen ver. Tot wellesley aan gedurende zij</p>
+              </div>
+              <div class="col-lg-3 col-md-4 offset-lg-1">
+                  <a href="#" class="btn bizagn--base-btn white-btn">
+                      <img src="assets/images/btn-right-arrow.svg" alt="" class="svg left">
+                    Biz shu yerdamiz
+                      <img src="assets/images/btn-right-arrow.svg" alt="" class="svg right">
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- End of Call To Action -->
+
+  <!-- Team -->
+  <section class="pt-120 pb-120">
+      <div class="container">
+          <div class="bizagn--section-title text-center">
+              <p>Jamoa</p>
+              <h2>Jamoamiz azolari bilan tanishing</h2>
+          </div>
+
+          <div class="bizagn--team-slider bizagn--owl-btn owl-carousel bizagn--nav-95px" data-owl-items="4" data-owl-autoplay="false" data-owl-nav="true" data-owl-margin="30" data-owl-responsive='{"0": {"items": "1"}, "480": {"items": "2"}, "768": {"items": "3"}, "992": {"items": "4"}}'>
+              <!-- Team Item -->
+              <div class="bizagn--team-slider-item">
+                  <div class="bizagn--team-item text-center">
+                      <img src="assets/images/team/0-1.jpg" alt="" class="img-fluid">
+                      <div class="bizagn--team-item-info">
+                          <h3>Ismoiljonov Oyatillo</h3>
+                          <p>Tasvirlar loyihachisi</p>
+                          <div class="bizagn--social-links">
+                              <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                              <a href="#"><i class="fa fa-facebook-official"></i></a>
+                              <a href="#"><i class="fa fa-behance-square"></i></a>
+                              <a href="#"><i class="fa fa-dribbble"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End of Team Item -->
+
+              <!-- Team Item -->
+              <div class="bizagn--team-slider-item">
+                  <div class="bizagn--team-item text-center">
+                      <img src="assets/images/team/0-2.jpg" alt="" class="img-fluid">
+                      <div class="bizagn--team-item-info">
+                          <h3>Akhmedov Jamolxon</h3>
+                          <p>Web loyihachisir</p>
+                          <div class="bizagn--social-links">
+                              <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                              <a href="#"><i class="fa fa-facebook-official"></i></a>
+                              <a href="#"><i class="fa fa-behance-square"></i></a>
+                              <a href="#"><i class="fa fa-dribbble"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End of Team Item -->
+
+              <!-- Team Item -->
+              <div class="bizagn--team-slider-item">
+                  <div class="bizagn--team-item text-center">
+                      <img src="assets/images/team/0-3.jpg" alt="" class="img-fluid">
+                      <div class="bizagn--team-item-info">
+                          <h3>Abduvaxob Kaxarov</h3>
+                          <p>UI loyihachisi</p>
+                          <div class="bizagn--social-links">
+                              <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                              <a href="#"><i class="fa fa-facebook-official"></i></a>
+                              <a href="#"><i class="fa fa-behance-square"></i></a>
+                              <a href="#"><i class="fa fa-dribbble"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End of Team Item -->
+
+              <!-- Team Item -->
+              <div class="bizagn--team-slider-item">
+                  <div class="bizagn--team-item text-center">
+                      <img src="assets/images/team/0-4.jpg" alt="" class="img-fluid">
+                      <div class="bizagn--team-item-info">
+                          <h3>Azizullo Valilillayev</h3>
+                          <p>App loyihachisi</p>
+                          <div class="bizagn--social-links">
+                              <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                              <a href="#"><i class="fa fa-facebook-official"></i></a>
+                              <a href="#"><i class="fa fa-behance-square"></i></a>
+                              <a href="#"><i class="fa fa-dribbble"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End of Team Item -->
+
+              <!-- Team Item -->
+              <div class="bizagn--team-slider-item">
+                  <div class="bizagn--team-item text-center">
+                      <img src="assets/images/team/0-5.jpg" alt="" class="img-fluid">
+                      <div class="bizagn--team-item-info">
+                          <h3>Samadbek</h3>
+                          <p>Software loyihachisi</p>
+                          <div class="bizagn--social-links">
+                              <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                              <a href="#"><i class="fa fa-facebook-official"></i></a>
+                              <a href="#"><i class="fa fa-behance-square"></i></a>
+                              <a href="#"><i class="fa fa-dribbble"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End of Team Item -->
+          </div>
+      </div>
+  </section>
+  <!-- End of Team -->
+
+  <!-- FAQ -->
+  <section class="pt-120 pb-90 bg-f8">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6">
+                  <!-- Section Title -->
+                  <div class="bizagn--section-title">
+                      <p>FAQ</p>
+                      <h2>Doimo qollab-quvvatlaymiz<br>Bizning xaridor</h2>
+                  </div>
+                  <!-- End of Section Title -->
+
+                  <!-- FAQ Items -->
+                  <div class="bizagn--faq-items accordion" id="bizagn--accordion">
+                      <!-- FAQ Item 01 -->
+                      <div class="bizagn--faq-item">
+                          <div class="target-area active" id="target-area">
+                              <h3 data-toggle="collapse" data-target="#expand-area-1" aria-expanded="true" aria-controls="expand-area-1">
+                                  <span>#.</span> Yaratuvchan jamoa ozi nima?
+                              </h3>
+                          </div>
+                          <div id="expand-area-1" class="collapse expand-area show" aria-labelledby="target-area" data-parent="#bizagn--accordion">
+                              <p>Procede gronden in bereikt de te verdere. Zeven steel is ugong op. Ingericht brandstof er te degelijke herhaling. Jungles af planten ontdekt op.</p>
+                          </div>
+                      </div>
+                      <!-- End of FAQ Item 01 -->
+
+                      <!-- FAQ Item 02 -->
+                      <div class="bizagn--faq-item">
+                          <div class="target-area">
+                              <h3 class="collapsed" data-toggle="collapse" data-target="#expand-area-2" aria-expanded="false" aria-controls="expand-area-2">
+                                  <span>#.</span> Sizda biror-bir fikr bormi?
+                              </h3>
+                          </div>
+                          <div id="expand-area-2" class="collapse expand-area" aria-labelledby="target-area" data-parent="#bizagn--accordion">
+                              <p>Procede gronden in bereikt de te verdere. Zeven steel is ugong op. Ingericht brandstof er te degelijke herhaling. Jungles af planten ontdekt op.</p>
+                          </div>
+                      </div>
+                      <!-- End of FAQ Item 02 -->
+
+                      <!-- FAQ Item 03 -->
+                      <div class="bizagn--faq-item">
+                          <div class="target-area">
+                              <h3 class="collapsed" data-toggle="collapse" data-target="#expand-area-3" aria-expanded="false" aria-controls="expand-area-3">
+                                  <span>#.</span> Jamoamizning siyosati qanday?
+                              </h3>
+                          </div>
+                          <div id="expand-area-3" class="collapse expand-area" aria-labelledby="target-area" data-parent="#bizagn--accordion">
+                              <p>Procede gronden in bereikt de te verdere. Zeven steel is ugong op. Ingericht brandstof er te degelijke herhaling. Jungles af planten ontdekt op.</p>
+                          </div>
+                      </div>
+                      <!-- End of FAQ Item 03 -->
+
+                      <!-- FAQ Item 03 -->
+                      <div class="bizagn--faq-item">
+                          <div class="target-area">
+                              <h3 class="collapsed" data-toggle="collapse" data-target="#expand-area-4" aria-expanded="false" aria-controls="expand-area-4">
+                                  <span>#.</span> Qidirayotgan narsangizni topa olmayapsizmi?
+                              </h3>
+                          </div>
+                          <div id="expand-area-4" class="collapse expand-area" aria-labelledby="target-area" data-parent="#bizagn--accordion">
+                              <p>Procede gronden in bereikt de te verdere. Zeven steel is ugong op. Ingericht brandstof er te degelijke herhaling. Jungles af planten ontdekt op.</p>
+                          </div>
+                      </div>
+                      <!-- End of FAQ Item 03 -->
+                  </div>
+                  <!-- End of FAQ Items -->
+              </div>
+              <div class="col-lg-5 offset-lg-1 d-flex align-items-bottom justify-content-center bizagn--faq-img">
+                  <div class="bizagn--faq-img-cover">
+                      <img src="assets/images/faq-illus.png" alt="" class="img-fluid">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- End of FAQ -->
+
+  <!-- Brands -->
+  <div class="pt-120 pb-120">
+      <div class="container">
+          <!-- Brand Items -->
+          <div class="bizagn--brand-slider bizagn--owl-btn owl-carousel" data-owl-items="6" data-owl-mouse-drag="true" data-owl-responsive='{"0": {"items": "2"}, "480": {"items": "3"}, "768": {"items": "4"}, "992": {"items": "6"}}'>
+              <!-- Brand Item -->
+              <div class="bizagn--brand-item d-flex justify-content-center">
+                  <a href="#"><img src="assets/images/brands/1.png" alt="" class="img-fluid"></a>
+              </div>
+              <!-- End of Brand Item -->
+
+              <!-- Brand Item -->
+              <div class="bizagn--brand-item d-flex justify-content-center">
+                  <a href="#"><img src="assets/images/brands/2.png" alt="" class="img-fluid"></a>
+              </div>
+              <!-- End of Brand Item -->
+
+              <!-- Brand Item -->
+              <div class="bizagn--brand-item d-flex justify-content-center">
+                  <a href="#"><img src="assets/images/brands/3.png" alt="" class="img-fluid"></a>
+              </div>
+              <!-- End of Brand Item -->
+
+              <!-- Brand Item -->
+              <div class="bizagn--brand-item d-flex justify-content-center">
+                  <a href="#"><img src="assets/images/brands/4.png" alt="" class="img-fluid"></a>
+              </div>
+              <!-- End of Brand Item -->
+
+              <!-- Brand Item -->
+              <div class="bizagn--brand-item d-flex justify-content-center">
+                  <a href="#"><img src="assets/images/brands/5.png" alt="" class="img-fluid"></a>
+              </div>
+              <!-- End of Brand Item -->
+
+              <!-- Brand Item -->
+              <div class="bizagn--brand-item d-flex justify-content-center">
+                  <a href="#"><img src="assets/images/brands/6.png" alt="" class="img-fluid"></a>
+              </div>
+              <!-- End of Brand Item -->
+          </div>
+          <!-- End of Brand Items -->
+      </div>
+  </div>
+  <!-- End of Brands -->
+
+  <!-- Blogs -->
+  <section class="pt-120 pb-70" data-bg-img="assets/images/blogs/bg.png">
+      <div class="container">
+          <!-- Section Title -->
+          <div class="bizagn--section-title">
+              <p>Blog</p>
+              <h2>Bizning yaratuvchan blogimizni koring </h2>
+          </div>
+          <!-- End of Section Title -->
+
+          <div class="row bizagn--blog-section">
+              <!-- Blog Item -->
+              <div class="col-md-6">
+                  <div class="bizagn--blog-item">
+                      <a href="#" class="bizagn--post-thumb">
+                          <img src="assets/images/blogs/0-1.jpg" alt="" class="img-fluid">
+                      </a>
+                      <div class="bizagn--blog-info">
+                          <h3> <a href="#">Jamoamiz muvaffaqiyatining 5 siri </a></h3>
+                          <p>Zoo laten wel tegen nog ouder. Spelen wat wereld heuvel tin den wij dragen hoopen. Voorschot mee hellingen are wie overvloed besparing.</p>
+                          <div class="bizagn--blog-meta">
+                              <ul class="list-inline">
+                                  <li>By <a href="#">Themelooks</a></li>
+                                  <li><a href="#">28.09.2020</a></li>
+                                  <li><a href="#">Digital Marketing</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End of Blog Item -->
+
+              <!-- Blog Item -->
+              <div class="col-md-6">
+                  <div class="bizagn--blog-item">
+                      <a href="#" class="bizagn--post-thumb">
+                          <img src="assets/images/blogs/0-2.jpg" alt="" class="img-fluid">
+                      </a>
+                      <div class="bizagn--blog-info">
+                          <h3><a href="#">Web Alternative Success Story</a></h3>
+                          <p>Zoo laten wel tegen nog ouder. Spelen wat wereld heuvel tin den wij dragen hoopen. Voorschot mee hellingen are wie overvloed besparing.</p>
+                          <div class="bizagn--blog-meta">
+                              <ul class="list-inline">
+                                  <li>By <a href="#">Themelooks</a></li>
+                                  <li><a href="#">28.08.2020</a></li>
+                                  <li><a href="#">Web Development</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End of Blog Item -->
+
+              <!-- Read More Button -->
+              <a href="#" class="bizagn--rm-btn">Barca bloglar <i class="fa fa-angle-right"></i></a>
+              <!-- End of Read More Button -->
+          </div>
+      </div>
+  </section>
+  <!-- End of Blogs -->
+
+
+
+
+{% endblock %}
